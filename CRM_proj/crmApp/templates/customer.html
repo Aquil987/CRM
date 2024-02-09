@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1>
+    {{cust_data.first_name}} {{cust_data.last_name}} Details...
+</h1>
+<div class="card">
+    <h5 class="card-header">
+        <strong>
+            {{cust_data.first_name}}
+            {{cust_data.last_name}}
+        </strong>
+    </h5>
+    <div class="card-body">
+      <!-- <h5 class="card-title">Special title treatment</h5> -->
+      <p class="card-text"><strong>Phone: </strong>{{cust_data.phone}}</p>
+      <p class="card-text"><strong>Email: </strong>{{cust_data.email}}</p>
+      <p class="card-text"><strong>Address: </strong>{{cust_data.Address}}</p>
+      <p class="card-text"><strong>City: </strong>{{cust_data.city}}</p>
+      <p class="card-text"><strong>State: </strong>{{cust_data.state}}</p>
+      <p class="card-text"><strong>PinCode: </strong>{{cust_data.zipcode}}</p>
+      <p class="card-text"><strong>Created_at: </strong>{{cust_data.created_at}}</p>
+    
+     
+    </div>
+  </div>  <br>
+  <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
+  <a href="{% url 'delete_cutomer' cust_data.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_cutomer' cust_data.id %}" class="btn btn-dark">Update</a>
+
+{%endblock%}
